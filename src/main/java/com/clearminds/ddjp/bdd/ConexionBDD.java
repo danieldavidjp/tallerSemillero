@@ -10,7 +10,7 @@ public class ConexionBDD {
 
 	public static String leerPropiedad(String propiedad) {
 		Properties p = new Properties();
-		String propiedadFinal = p.getProperty(propiedad);
+		String propiedadFinal;
 		;
 		try {
 			p.load(new FileReader("conexion.properties"));
@@ -22,10 +22,10 @@ public class ConexionBDD {
 			e.printStackTrace();
 			System.out.println("Archivo no encontrado");
 		}
+		
+		if (p.getProperty(propiedad) != null) {
 
-		if (propiedadFinal != null) {
-
-			System.out.println(propiedadFinal);
+			propiedadFinal=p.getProperty(propiedad);
 
 		} else {
 			
