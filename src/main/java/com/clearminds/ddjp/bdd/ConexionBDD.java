@@ -1,5 +1,6 @@
 package com.clearminds.ddjp.bdd;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,7 +16,7 @@ public class ConexionBDD {
 	public static String leerPropiedad(String propiedad) {
 		Properties p = new Properties();
 		String propiedadFinal;
-		;
+		
 		try {
 			p.load(new FileReader("conexion.properties"));
 		} catch (FileNotFoundException e) {
@@ -50,9 +51,9 @@ public class ConexionBDD {
 		try {
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
 			throw new BDDException("Error al conectar con la base de datos");
-
+			
 		}
 
 		return conn;
