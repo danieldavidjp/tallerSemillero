@@ -52,6 +52,7 @@ public class ConexionBDD {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			throw new BDDException("Error al conectar con la base de datos");
+
 		}
 
 		return conn;
